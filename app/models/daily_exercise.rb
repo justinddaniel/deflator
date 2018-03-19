@@ -1,0 +1,3 @@
+class DailyExercise < ApplicationRecord
+
+end
