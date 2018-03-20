@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import InfoDisplay from './components/InfoDisplay';
-
-let users = [ {
-	name: 'Ronnie', id: 1
-	}
-]
+import UserService from './services/UserService';
 
 class App extends Component {
+	constructor() {
+		super()
+
+		this.state = {
+			users: []
+		}
+	}
+
+	componentDidMount() {
+		UserService.fetchUsers().then(users => this.setState({ users }))
+	}
+
   render() {
     return (
       <div className="App">
@@ -15,7 +23,7 @@ class App extends Component {
       		{ /* <Navbar /> */ }
       	</div>
       	<div className="info-display">
-      		<InfoDisplay users={users} /> 
+      		<InfoDisplay users={this.state.users} /> 
       	</div>
       	<div className="info-entry">
       		{ /* <InfoEntry /> */ }
