@@ -5,7 +5,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      	<h1>Deflator diet and exercise tracking app</h1>
       	<div className="navbar">
       		<p>navbar</p>
       	</div>
