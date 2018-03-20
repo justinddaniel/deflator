@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  namespace :api do
+  	root 'users#index'
 
-  resources :users
+  	resources :users
+  end
 end
