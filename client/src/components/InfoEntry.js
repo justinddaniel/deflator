@@ -69,7 +69,7 @@ class InfoEntry extends Component {
 
         <label htmlFor="user_bmi">BMI</label>
         <input 
-          type="numweight_goal
+          type="number"
           name="bmi"
           value={this.state.bmi} 
           onChange={this.handleOnChange}
