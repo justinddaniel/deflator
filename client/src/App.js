@@ -16,6 +16,12 @@ class App extends Component {
 		UserService.fetchUsers().then(users => this.setState({ users }))
 	}
 
+  addUser = user => {
+    UserService.createUser(user).then(user => this.setState({
+      users: this.state.users.concat(user)
+    }))
+  }
+
   render() {
     return (
       <div className="App">
@@ -26,7 +32,7 @@ class App extends Component {
       		<InfoDisplay users={this.state.users} /> 
       	</div>
       	<div className="info-entry">
-      		{ /* <InfoEntry /> */ }
+      		<InfoEntry addUser={this.addUser} />
       	</div>
       </div>
     );
