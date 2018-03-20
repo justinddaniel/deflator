@@ -1,6 +1,6 @@
 const UserService = {
 	fetchUsers() => {
-		return fetch('/users').then(response => response.json())
+		return fetch('/api/users').then(response => response.json())
 	}
 }
 
