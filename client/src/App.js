@@ -5,8 +5,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>React client side</header>
-        <p className="App-intro">To get started, edit App and save to reload.</p>
+      	<h1>Deflator diet and exercise tracking app</h1>
+      	<div className="navbar">
+      		<p>navbar</p>
+      	</div>
+      	<div className="info-display">
+      		<p>User data</p>
+      	</div>
+      	<div className="info-entry">
+      		<p>Enter info</p>
+      	</div>
       </div>
     );
   }
