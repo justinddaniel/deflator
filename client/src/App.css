@@ -2,4 +2,18 @@
   text-align: center;
 }
 
+.navbar {
+	background-color: #000066;
+	color: white;
+}
+
+.info-display {
+	background-color: #6699ff;
+	color: black;
+}
+
+.info-entry {
+	background-color: #cc0000;
+	color: white;
+}
 
