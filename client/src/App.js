@@ -6,13 +6,13 @@ class App extends Component {
     return (
       <div className="App">
       	<div className="navbar">
-      		<p>navbar</p>
+      		<Navbar />
       	</div>
       	<div className="info-display">
-      		<p>User data</p>
+      		<InfoDisplay />
       	</div>
       	<div className="info-entry">
-      		<p>Enter info</p>
+      		<InfoEntry />
       	</div>
       </div>
     );
