@@ -5,23 +5,10 @@ import InfoEntry from './components/InfoEntry';
 import UserService from './services/UserService';
 
 class App extends Component {
-	constructor() {
-		super()
-
-		this.state = {
-			users: []
-		}
-	}
 
 	componentDidMount() {
 		UserService.fetchUsers().then(users => this.setState({ users }))
 	}
-
-  addUser = user => {
-    UserService.createUser(user).then(user => this.setState({
-      users: this.state.users.concat(user)
-    }))
-  }
 
   render() {
     return (
@@ -30,10 +17,10 @@ class App extends Component {
       		{ /* <Navbar /> */ }
       	</div>
       	<div className="info-display">
-      		<InfoDisplay users={this.state.users} /> 
+      		<InfoDisplay /> 
       	</div>
       	<div className="info-entry">
-      		<InfoEntry addUser={this.addUser} />
+      		<InfoEntry />
       	</div>
       </div>
     );
