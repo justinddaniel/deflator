@@ -4,6 +4,7 @@ import InfoDisplay from './components/InfoDisplay';
 import InfoEntry from './components/InfoEntry';
 import UserService from './services/UserService';
 
+
 class App extends Component {
 
 	componentDidMount() {
