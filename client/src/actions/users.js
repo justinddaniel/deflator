@@ -37,7 +37,7 @@ export const createUser = user => {
       .then(response => response.json())
       .then(user => {
         dispatch(addUser(user))
-        dispatch(resetSUserForm())
+        dispatch(resetUserForm())
       })
       .catch(error => console.log(error))
   }
