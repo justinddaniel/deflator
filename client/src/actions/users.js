@@ -14,3 +14,31 @@ const addUser = user => {
     user
   }
 } 
+
+// ** Async Actions **
+export const getUsers = () => {
+  return dispatch => {
+    return fetch(`/api/users`)
+      .then(response => response.json())
+      .then(users => dispatch(setUsers(users)))
+      .catch(error => console.log(error));
+  }
+}
+
+export const createUser = user => {
+  return dispatch => {
+    return fetch(`/api/users`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ user: user })
+    })
+      .then(response => response.json())
+      .then(user => {
+        dispatch(addUser(user))
+        dispatch(resetSUserForm())
+      })
+      .catch(error => console.log(error))
+  }
+}
