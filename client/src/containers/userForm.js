@@ -16,11 +16,11 @@ class UserForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
-    this.props.createUser(this.props.UserFormData)
+    this.props.createUser(this.props.userFormData)
   }
 
   render() {
-    const { name, weight, height, bmi, weekly_target, weight_goal, calorie_allot } = this.props.UserFormData;
+    const { name, weight, height, bmi, weekly_target, weight_goal, calorie_allot } = this.props.userFormData;
 
     return (
       <div>
@@ -100,7 +100,7 @@ class UserForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    UserFormData: state.UserFormData
+    userFormData: state.userFormData
   }
 }
 
