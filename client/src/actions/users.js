@@ -7,3 +7,10 @@ const setUsers = users => {
     users
   }
 }
+
+const addUser = user => {
+  return {
+    type: 'CREATE_USER_SUCCESS',
+    user
+  }
+} 
