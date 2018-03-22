@@ -25,7 +25,7 @@ const User = ({ user }) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    user: state.users.find(user => user.id === 1)
+    user: state.users.find(user => user.id === 4)
   }
 }
 

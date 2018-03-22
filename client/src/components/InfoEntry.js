@@ -6,50 +6,31 @@ import {addUser} from '../actions/users.js';
 import {createUser} from '../actions/users.js';
 
 class InfoEntry extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      name: '', 
-      weight: '',
-      height: '',
-      bmi: '',
-      weight_goal: '',
-      weekly_target: '',
-      calorie_allot: ''
-    }
-  }
 
   handleOnChange = event => {
     const { name, value } = event.target;
-    this.setState({
+  const currentUserFormData = Object.assign({}, this.props.userFormData, {
       [name]: value
     })
+    this.props.updateUserFormData(currentUserFormData)
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    const user = this.state;
-    this.props.addUser(user)
-    this.setState({
-      name: '', 
-      weight: '',
-      height: '',
-      bmi: '',
-      weight_goal: '',
-      weekly_target: '',
-      calorie_allot: ''
-    })
-  }
+    this.props.createUser(this.props.userFormData)
+    }
+  
 
   render() {
+    const {name, weight, height, bmi, weight_goal, weekly_target, calorie_allot} = this.props.userFormData
     return (
+      <div>Add a User
       <form onSubmit={this.handleOnSubmit}>
         <label htmlFor="user_name"> Name </label>
         <input 
           type="text"
           name="name"
-          value={this.state.name} 
+          value={name} 
           onChange={this.handleOnChange}
           placeholder="User Name"
         /><br></br>
@@ -58,7 +39,7 @@ class InfoEntry extends Component {
         <input 
           type="number"
           name="weight"
-          value={this.state.weight} 
+          value={weight} 
           onChange={this.handleOnChange}
           placeholder="User Weight (lbs)"
         /><br></br>
@@ -67,7 +48,7 @@ class InfoEntry extends Component {
         <input 
           type="number"
           name="height"
-          value={this.state.height} 
+          value={height} 
           onChange={this.handleOnChange}
           placeholder="User Height (inches)"
         /><br></br>
@@ -76,7 +57,7 @@ class InfoEntry extends Component {
         <input 
           type="number"
           name="bmi"
-          value={this.state.bmi} 
+          value={bmi} 
           onChange={this.handleOnChange}
           placeholder="User Body Mass Index (BMI)"
         /><br></br>
@@ -85,7 +66,7 @@ class InfoEntry extends Component {
         <input 
           type="number"
           name="weight_goal"
-          value={this.state.weight_goal} 
+          value={weight_goal} 
           onChange={this.handleOnChange}
           placeholder="Weight Goal (lbs)"
         /><br></br>
@@ -94,7 +75,7 @@ class InfoEntry extends Component {
         <input 
           type="number"
           name="weekly_target"
-          value={this.state.weekly_target} 
+          value={weekly_target} 
           onChange={this.handleOnChange}
           placeholder="Weekly target (lbs lost)"
         /><br></br>
@@ -103,15 +84,25 @@ class InfoEntry extends Component {
         <input 
           type="number"
           name="calorie_allot"
-          value={this.state.calorie_allot} 
+          value={calorie_allot} 
           onChange={this.handleOnChange}
           placeholder="Callorie Allotment (calories/day)"
         /><br></br><br></br>
 
         <button>Add User</button>
       </form>
+      </div>
     )
   }
 }
 
-export default InfoEntry;
+const mapStateToProps = state => {
+  return {
+    userFormData: state.userFormData
+  }
+}
+
+export default connect(mapStateToProps, { 
+  updateUserFormData,
+  createUser
+})(InfoEntry);
