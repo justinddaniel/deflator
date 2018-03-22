@@ -1,4 +1,4 @@
-
+import {resetUserForm} from './userForm';
 
 // ** Action Creators **
 const setUsers = users => {
@@ -17,13 +17,14 @@ const addUser = user => {
 
 // ** Async Actions **
 export const getUsers = () => {
-      return fetch(`/api/users`)
+    return dispatch => {
+      return fetch(`http://localhost:3001/api/users`)
       .then(response => response.json())
-      .then(users => setUsers(users))
+      .then(users => dispatch(setUsers(users)))
       .catch(error => console.log(error));
   }
-
-/*export const createUser = user => {
+}
+export const createUser = user => {
   return dispatch => {
     return fetch(`/api/users`, {
       method: "POST",
@@ -39,4 +40,4 @@ export const getUsers = () => {
       })
       .catch(error => console.log(error))
   }
-} */
+} 
