@@ -17,15 +17,14 @@ const addUser = user => {
 
 // ** Async Actions **
 export const getUsers = () => {
-  return dispatch => {
-    return fetch(`/api/users`)
+     fetch(`/api/users`)
       .then(response => response.json())
-      .then(users => dispatch(setUsers(users)))
+      .then(users => console.log(users))
+      .then(users => setUsers(users))
       .catch(error => console.log(error));
-  }
 }
 
-export const createUser = user => {
+/*export const createUser = user => {
   return dispatch => {
     return fetch(`/api/users`, {
       method: "POST",
@@ -41,4 +40,4 @@ export const createUser = user => {
       })
       .catch(error => console.log(error))
   }
-}
+} */

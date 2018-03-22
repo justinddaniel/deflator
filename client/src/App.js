@@ -3,13 +3,14 @@ import './App.css';
 import InfoDisplay from './components/InfoDisplay';
 import InfoEntry from './components/InfoEntry';
 import UserService from './services/UserService';
+import {getUsers} from './actions/users'
 
 
 class App extends Component {
 
 	componentDidMount() {
-		UserService.fetchUsers().then(users => this.setState({ users }))
-	}
+		getUsers()
+	} 
 
   render() {
     return (

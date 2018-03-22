@@ -7,12 +7,12 @@ const User = ({ user }) => {
       {user ?
         <div>
           <h3>{user.name}</h3>
-          <p>Weight: {user.weight}</p><br></br>
-          <p>Height: {user.height}</p><br></br>
-          <p>BMI: {user.bmi}</p><br></br>
-          <p>Weekly Target: {user.weekly_target}</p><br></br>
-          <p>Weight Goal: {user.weight_goal}</p><br></br>
-          <p>Calorie Allotment: {user.calorie_allot}</p><br></br>
+          <p>Weight: {user.weight}</p>
+          <p>Height: {user.height}</p>
+          <p>BMI: {user.bmi}</p>
+          <p>Weekly Target: {user.weekly_target}</p>
+          <p>Weight Goal: {user.weight_goal}</p>
+          <p>Calorie Allotment: {user.calorie_allot}</p>
         </div>
         :
         <div>
@@ -24,9 +24,12 @@ const User = ({ user }) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
-    user: state.users.find(user => user.id == ownProps.match.params.userId)
+    user: state.users.find(user => user.id === 1)
   }
 }
 
-export default connect(mapStateToProps)(User);
+export default connect(mapStateToProps)(User); 
+
+/* connects to store */
