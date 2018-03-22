@@ -17,12 +17,11 @@ const addUser = user => {
 
 // ** Async Actions **
 export const getUsers = () => {
-     fetch(`/api/users`)
+      return fetch(`/api/users`)
       .then(response => response.json())
-      .then(users => console.log(users))
       .then(users => setUsers(users))
       .catch(error => console.log(error));
-}
+  }
 
 /*export const createUser = user => {
   return dispatch => {

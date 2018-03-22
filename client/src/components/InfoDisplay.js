@@ -24,7 +24,6 @@ const User = ({ user }) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     user: state.users.find(user => user.id === 1)
   }
