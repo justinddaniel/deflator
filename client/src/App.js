@@ -23,7 +23,9 @@ class App extends Component {
       <Router>
         <div className="App">
         	<div className="navbar">
-        		{ /* <Navbar /> */ }
+        		<Link to="/"> Home </Link>
+            <Link to="/api/users"> Users </Link>
+            <Link to="/api/users/new"> Add user </Link>
         	</div>
         	<div className="info-display">
         		<InfoDisplay /> 

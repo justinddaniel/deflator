@@ -12,6 +12,11 @@
 	padding: 0;
 }
 
+.navbar a {
+	color: white;
+	text-decoration: none;
+}
+
 .info-display {
 	float: left;
 	background-color: #6699ff;
