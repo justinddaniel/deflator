@@ -5,6 +5,12 @@ import InfoEntry from './components/InfoEntry';
 import {getUsers} from './actions/users';
 import {connect} from 'react-redux';
 
+import { 
+  BrowserRouter as Router, 
+  Route,
+  Link
+} from 'react-router-dom';
+
 
 class App extends Component {
 
