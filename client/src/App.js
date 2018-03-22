@@ -3,13 +3,14 @@ import './App.css';
 import InfoDisplay from './components/InfoDisplay';
 import InfoEntry from './components/InfoEntry';
 import UserService from './services/UserService';
-import {getUsers} from './actions/users'
+import {getUsers} from './actions/users';
+import {connect} from 'react-redux';
 
 
 class App extends Component {
 
 	componentDidMount() {
-		getUsers()
+		this.props.getUsers()
 	} 
 
   render() {
@@ -29,4 +30,6 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, {getUsers})(App); 
+
+

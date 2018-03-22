@@ -15,10 +15,15 @@ const addUser = user => {
   }
 } 
 
+const headers = {
+  Accept: 'application/json',
+  'Content-Type': 'application/json'
+}
+
 // ** Async Actions **
 export const getUsers = () => {
     return dispatch => {
-      return fetch(`http://localhost:3001/api/users`)
+      return fetch(`/api/users`, {headers})
       .then(response => response.json())
       .then(users => dispatch(setUsers(users)))
       .catch(error => console.log(error));
