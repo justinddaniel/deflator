@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {updateUserFormData} from '../actions/userForm.js';
+import {resetUserForm} from '../actions/userForm.js';
+import {addUser} from '../actions/users.js';
+import {createUser} from '../actions/users.js';
 
 class InfoEntry extends Component {
   constructor(props) {
