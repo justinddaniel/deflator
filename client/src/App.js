@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import InfoDisplay from './components/InfoDisplay';
 import InfoEntry from './components/InfoEntry';
+import Home from './components/Home';
 import {getUsers} from './actions/users';
 import {connect} from 'react-redux';
 
@@ -28,10 +29,11 @@ class App extends Component {
             <Link to="/api/users/new"> Add user </Link>
         	</div>
         	<div className="info-display">
-        		<InfoDisplay /> 
+        		<Route path="/api/users" component={InfoDisplay} /> 
         	</div>
         	<div className="info-entry">
-        		<InfoEntry />
+        		<Route path="/api/users/new" component={InfoEntry} />
+            <Route path="/" component={Home} />
         	</div>
         </div>
       </Router>
