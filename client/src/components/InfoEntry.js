@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {updateUserFormData} from '../actions/userForm.js';
-import {resetUserForm} from '../actions/userForm.js';
-import {addUser} from '../actions/users.js';
 import {createUser} from '../actions/users.js';
 
 class InfoEntry extends Component {
@@ -41,7 +39,6 @@ class InfoEntry extends Component {
           name="weight"
           value={weight} 
           onChange={this.handleOnChange}
-          placeholder="User Weight (lbs)"
         /><br></br>
 
         <label htmlFor="user_height"> Height </label>
@@ -50,7 +47,6 @@ class InfoEntry extends Component {
           name="height"
           value={height} 
           onChange={this.handleOnChange}
-          placeholder="User Height (inches)"
         /><br></br>
 
         <label htmlFor="user_bmi"> BMI </label>
@@ -59,7 +55,6 @@ class InfoEntry extends Component {
           name="bmi"
           value={bmi} 
           onChange={this.handleOnChange}
-          placeholder="User Body Mass Index (BMI)"
         /><br></br>
 
         <label htmlFor="user_weight_goal"> Weight Goal </label>
@@ -68,7 +63,6 @@ class InfoEntry extends Component {
           name="weight_goal"
           value={weight_goal} 
           onChange={this.handleOnChange}
-          placeholder="Weight Goal (lbs)"
         /><br></br>
 
         <label htmlFor="user_weekly_target"> Weekly Target </label>
@@ -77,7 +71,6 @@ class InfoEntry extends Component {
           name="weekly_target"
           value={weekly_target} 
           onChange={this.handleOnChange}
-          placeholder="Weekly target (lbs lost)"
         /><br></br>
 
         <label htmlFor="user_calorie_allot"> Calorie Allotment </label>
@@ -86,7 +79,6 @@ class InfoEntry extends Component {
           name="calorie_allot"
           value={calorie_allot} 
           onChange={this.handleOnChange}
-          placeholder="Callorie Allotment (calories/day)"
         /><br></br><br></br>
 
         <button>Add User</button>
