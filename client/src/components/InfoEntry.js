@@ -15,8 +15,10 @@ class InfoEntry extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.createUser(this.props.userFormData)
-    }
+    this.props.createUser(this.props.userFormData, function(){
+      this.props.history.push('/api/users')
+    }) 
+  }
   
 
   render() {

@@ -29,7 +29,7 @@ export const getUsers = () => {
       .catch(error => console.log(error));
   }
 }
-export const createUser = user => {
+export const createUser = (user, cb) => {
   return dispatch => {
     return fetch(`/api/users`, {
       method: "POST",
@@ -41,6 +41,7 @@ export const createUser = user => {
       .then(response => response.json())
       .then(user => {
         dispatch(addUser(user))
+        cb()
         dispatch(resetUserForm())
       })
       .catch(error => console.log(error))

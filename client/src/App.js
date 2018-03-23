@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import InfoDisplay from './components/InfoDisplay';
 import InfoEntry from './components/InfoEntry';
-/*import UsersDisplay from './components/UsersDisplay'; mount when fixed */
+import UsersDisplay from './components/UsersDisplay';
 import Home from './components/Home';
 import {getUsers} from './actions/users';
 import {connect} from 'react-redux';
@@ -31,7 +31,7 @@ class App extends Component {
             <Link to="/api/users/new"> Add user </Link>
         	</div>
         	<div className="info-display">
-        		<Route path="/api/users" component={InfoDisplay} /> 
+        		<Route path="/api/users" component={UsersDisplay} /> 
         	</div>
         	<div className="info-entry">
         		<Route path="/api/users/new" component={InfoEntry} />

@@ -1,4 +1,4 @@
-/* Needs to be fixed
+
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {getUsers} from '../actions/users';
@@ -14,10 +14,14 @@ class UsersDisplay extends Component {
 render () {
 
 	const users = this.props.users.map((user) => {
-		user.name
+		return <div>
+      <li key={user.id}>{user.name}</li>
+      <button>click me</button>
+      
+    </div>
 	})
 
-	console.log(users)
+	 console.log(users)
 
   return (
   	<div>
@@ -34,5 +38,5 @@ const mapStateToProps = (state, ownProps) => {
 } 
 
 export default connect(mapStateToProps, {getUsers})(UsersDisplay);
-*/
+
 
