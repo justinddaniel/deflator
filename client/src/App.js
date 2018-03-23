@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import InfoDisplay from './components/InfoDisplay';
 import InfoEntry from './components/InfoEntry';
-/* import UsersDisplay from './components/UsersDisplay'; */
+/*import UsersDisplay from './components/UsersDisplay'; mount when fixed */
 import Home from './components/Home';
 import {getUsers} from './actions/users';
 import {connect} from 'react-redux';
