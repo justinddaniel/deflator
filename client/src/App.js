@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import InfoDisplay from './components/InfoDisplay';
 import InfoEntry from './components/InfoEntry';
+/* import UsersDisplay from './components/UsersDisplay'; */
 import Home from './components/Home';
 import {getUsers} from './actions/users';
 import {connect} from 'react-redux';
@@ -24,6 +25,7 @@ class App extends Component {
       <Router>
         <div className="App">
         	<div className="navbar">
+          <span>Deflator Navigation Bar: </span>
         		<Link to="/"> Home </Link>
             <Link to="/api/users"> Users </Link>
             <Link to="/api/users/new"> Add user </Link>
