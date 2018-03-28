@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180319210918) do
+ActiveRecord::Schema.define(version: 20180328221108) do
 
   create_table "daily_exercises", force: :cascade do |t|
     t.integer "day_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20180319210918) do
     t.float "weight_goal"
     t.float "weekly_target"
     t.integer "calorie_allot"
+    t.integer "likes", default: 0
   end
 
 end
