@@ -10,19 +10,18 @@ class UsersDisplay extends Component {
 		this.props.getUsers()
 	}
 
+  userLikes(userId) {
+    document.getElementById(userId).innerHTML++
+  }
+
 
 render () {
-
-  function userLikes (userId) {
-   return console.log('I like you!')
-     /* document.getElementById('1').innerHTML */
-  } 
 
 	const users = this.props.users.map((user) => {
 		return <div>
       <li key={user.id}>{user.name}</li>
       <p id={user.id}>0</p>
-      <button type="button" key={user.id + 11} onClick={userLikes}>Like user</button>
+      <button type="button" id={user.id + 11} onClick={(e) => this.userLikes(user.id)}>Like user</button>
       
     </div>
 	})
