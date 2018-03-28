@@ -19,7 +19,7 @@ render () {
 
 	const users = this.props.users.map((user) => {
 		return <div>
-      <li key={user.id}>Username: {user.name}, Likes: <span id={user.id}>0</span> </li>
+      <li key={user.id}>Username: {user.name}, Likes: <span id={user.id}>{user.likes}</span> </li>
       
       <button type="button" id={user.id + 11} onClick={(e) => this.userLikes(user.id)}>Like user</button>
       
