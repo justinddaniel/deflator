@@ -13,6 +13,13 @@ const addUser = user => {
     type: 'CREATE_USER_SUCCESS',
     user
   }
+}
+
+const likeUser = user => {
+  return {
+    type: 'LIKE_USER_SUCCESS',
+    user
+  }
 } 
 
 const headers = {
