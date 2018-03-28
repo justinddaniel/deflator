@@ -6,6 +6,11 @@ export default (state = [], action) => {
     case 'CREATE_USER_SUCCESS':
       return state.concat(action.user);
 
+    case 'LIKE_USER_SUCCESS':
+    	return {
+    		//
+    	}
+
     default: 
       return state;
   }
