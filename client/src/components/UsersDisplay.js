@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {getUsers} from '../actions/users';
+import {editUserLikes} from '../actions/users';
 import { Route, Switch } from 'react-router-dom';
 
 class UsersDisplay extends Component {
@@ -11,9 +12,11 @@ class UsersDisplay extends Component {
 	}
 
   userLikes(userId) {
-    document.getElementById(userId).innerHTML++
+    let likedUser = this.props.users.find((user) => {
+      return user.id === userId
+    })
+    this.props.editUserLikes(likedUser)
   }
-
 
 render () {
 
