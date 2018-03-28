@@ -53,4 +53,22 @@ export const createUser = (user, cb) => {
       })
       .catch(error => console.log(error))
   }
-} 
+}
+
+export const editUserLikes = (user, cb) => {
+  return dispatch => {
+    return fetch(`/api/users/${user.id}/edit`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ user: user })
+    })
+      .then(response => response.json())
+      .then(user => {
+        dispatch(likeUser(user))
+        cb()
+      })
+      .catch(error => console.log(error))
+  }
+}  
