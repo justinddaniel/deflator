@@ -11,6 +11,10 @@ class UsersDisplay extends Component {
 		this.props.getUsers()
 	}
 
+  componentWillReceiveProps(nextProps) {
+    nextProps.getUsers()
+  }
+
   userLikes(userId) {
     var user = this.props.users.find(function (user) { return user.id === userId; });
     user.likes += 1
