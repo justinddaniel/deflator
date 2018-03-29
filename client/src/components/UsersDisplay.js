@@ -11,16 +11,16 @@ class UsersDisplay extends Component {
 		this.props.getUsers()
 	}
 
-  componentWillReceiveProps(nextProps) {
+ /* componentWillReceiveProps(nextProps) {
     nextProps.getUsers()
-  }
+  } */
+
 
   userLikes(userId) {
     var user = this.props.users.find(function (user) { return user.id === userId; });
-    user.likes += 1
-    this.props.editUserLikes(user, function(){
-      this.props.history.push('/api/users/')
-    })
+    var userCopy = Object.assign({}, user, {likes: user.likes + 1})
+    
+    this.props.editUserLikes(userCopy)
   }
 
 render () {

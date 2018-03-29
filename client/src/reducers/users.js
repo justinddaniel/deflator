@@ -7,7 +7,13 @@ export default (state = [], action) => {
       return state.concat(action.user);
 
     case 'LIKE_USER_SUCCESS':
-    	return action.user;
+    // map over the current users and only replace the one user that we get back from the server
+      return state.map((user) => {
+        if (user.id === action.user.id) {
+          return action.user
+        }
+        else {return user}
+      })
 
     default: 
       return state;
