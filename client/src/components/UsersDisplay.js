@@ -12,10 +12,8 @@ class UsersDisplay extends Component {
 	}
 
   userLikes(userId) {
-    let likedUser = this.props.users.find((user) => {
-      return user.id === userId
-    })
-    this.props.editUserLikes(likedUser)
+    var user = this.props.users.find(function (user) { return user.id === userId; });
+    this.props.editUserLikes(user)
   }
 
 render () {
@@ -43,6 +41,6 @@ const mapStateToProps = (state, ownProps) => {
   })
 } 
 
-export default connect(mapStateToProps, {getUsers})(UsersDisplay);
+export default connect(mapStateToProps, {getUsers, editUserLikes})(UsersDisplay);
 
 
