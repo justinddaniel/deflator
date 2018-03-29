@@ -13,6 +13,7 @@ class UsersDisplay extends Component {
 
   userLikes(userId) {
     var user = this.props.users.find(function (user) { return user.id === userId; });
+    user.likes += 1
     this.props.editUserLikes(user)
   }
 
