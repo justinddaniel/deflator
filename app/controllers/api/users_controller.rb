@@ -28,6 +28,6 @@ class Api::UsersController < ApplicationController
 private
 
 	def user_params
-		params.require(:user).permit(:name, :weight, :height, :bmi, :weekly_target, :weight_goal, :calorie_allot)
+		params.require(:user).permit(:name, :weight, :height, :bmi, :weekly_target, :weight_goal, :calorie_allot, :likes)
 	end
 end
