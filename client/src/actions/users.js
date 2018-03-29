@@ -55,7 +55,7 @@ export const createUser = (user, cb) => {
   }
 }
 
-export const editUserLikes = (user) => {
+export const editUserLikes = (user, cb) => {
   return dispatch => {
     return fetch(`/api/users/${user.id}`, {
       method: "PUT",
@@ -67,6 +67,7 @@ export const editUserLikes = (user) => {
       .then(response => response.json())
       .then(user => {
         dispatch(likeUser(user))
+        cb()
       })
       .catch(error => console.log(error))
   }
