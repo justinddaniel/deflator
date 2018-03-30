@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {getUsers} from '../actions/users';
@@ -11,11 +10,6 @@ class UsersDisplay extends Component {
 		this.props.getUsers()
 	}
 
- /* componentWillReceiveProps(nextProps) {
-    nextProps.getUsers()
-  } */
-
-
   userLikes(userId) {
     var user = this.props.users.find(function (user) { return user.id === userId; });
     var userCopy = Object.assign({}, user, {likes: user.likes + 1})
@@ -27,7 +21,7 @@ render () {
 
 	const users = this.props.users.map((user) => {
 		return <div>
-      <li key={user.id}>Username: {user.name}, Likes: <span id={user.id}>{user.likes}</span> </li>
+      <li key={user.id}>Username: <a href=`/api/users/${user.id}`>{user.name}</a>, Likes: <span id={user.id}>{user.likes}</span> </li>
       
       <button type="button" id={user.id + 11} onClick={(e) => this.userLikes(user.id)}>Like user</button>
       
