@@ -6,7 +6,7 @@ class UserDisplay extends Component {
 
 	render() {
 
-	const user = this.props.users.find(function (user) { return user.id === this.props.id });
+		const user = this.state.user
 
 		return <div>
 		<h2>Username: {user.name} </h2>
@@ -28,7 +28,7 @@ class UserDisplay extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    users: state.users
+    user: state.user
   })
 } 
 
