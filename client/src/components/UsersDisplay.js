@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {getUsers} from '../actions/users';
 import {editUserLikes} from '../actions/users';
 import { Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class UsersDisplay extends Component {
 
@@ -21,7 +22,7 @@ render () {
 
 	const users = this.props.users.map((user) => {
 		return <div>
-      <li key={user.id}>Username: <a href=`/api/users/${user.id}`>{user.name}</a>, Likes: <span id={user.id}>{user.likes}</span> </li>
+      <li key={user.id}>Username: <Link key={user.id + 11} to={`/api/users/${user.id}`}>{user.name}</Link>, Likes: <span id={user.id}>{user.likes}</span> </li>
       
       <button type="button" id={user.id + 11} onClick={(e) => this.userLikes(user.id)}>Like user</button>
       
