@@ -22,6 +22,13 @@ const likeUser = user => {
   }
 } 
 
+const dispUser = user => {
+  return {
+    type: 'GET_USER_SUCCESS',
+    user
+  }
+}
+
 const headers = {
   Accept: 'application/json',
   'Content-Type': 'application/json'
@@ -58,7 +65,6 @@ export const createUser = (user, cb) => {
 export const editUserLikes = (user) => {
   return dispatch => {
     return fetch(`/api/users/${user.id}`, {
-      method: "PUT",
       headers: {
         'Content-Type': 'application/json'
       },
@@ -71,3 +77,12 @@ export const editUserLikes = (user) => {
       .catch(error => console.log(error))
   }
 }  
+
+/*export const getUser = (userId) => {
+    return dispatch => {
+      return fetch(`/api/users/${id}`, {headers})
+      .then(response => response.json())
+      .then(user => dispatch(dispUser(user)))
+      .catch(error => console.log(error));
+  }
+} */

@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {getUsers} from '../actions/users';
 import {editUserLikes} from '../actions/users';
 import { Route, Switch } from 'react-router-dom';
+import UserDisplay from './UserDisplay'
 import { Link } from 'react-router-dom';
 
 class UsersDisplay extends Component {
-
-	componentDidMount() {
-		this.props.getUsers()
-	}
 
   userLikes(userId) {
     var user = this.props.users.find(function (user) { return user.id === userId; });
@@ -32,6 +28,9 @@ render () {
   return (
   	<div>
   	  <ul>{users}</ul>
+      <div>
+         <Route path="/api/users/:id" component={UserDisplay} /> 
+      </div>
   	</div>
   	) 
   }
@@ -43,6 +42,6 @@ const mapStateToProps = (state, ownProps) => {
   })
 } 
 
-export default connect(mapStateToProps, {getUsers, editUserLikes})(UsersDisplay);
+export default connect(mapStateToProps, {editUserLikes})(UsersDisplay);
 
 

@@ -7,9 +7,10 @@ import UserDisplay from './components/UserDisplay';
 import Home from './components/Home';
 import {getUsers} from './actions/users';
 import {connect} from 'react-redux';
+import { IndexRoute } from 'react-router';
 
 import { 
-  BrowserRouter as Router, 
+  BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom';
@@ -33,7 +34,7 @@ class App extends Component {
         	</div>
         	<div className="info-display">
         		<Route path="/api/users" component={UsersDisplay} />
-            <Route path={`/api/users/${user.id}`} component={UserDisplay} /> 
+           
         	</div>
         	<div className="info-entry">
         		<Route path="/api/users/new" component={InfoEntry} />

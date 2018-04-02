@@ -1,35 +1,26 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
+import UsersDisplay from './UsersDisplay';
 
 class UserDisplay extends Component {
 
 	render() {
-
-		const user = this.state.user
-
-		return <div>
-		<h2>Username: {user.name} </h2>
+		const { user } = this.props
+		return user ? 
+		 <div>
+			<p>{user.name}</p>
+		 </div> : null
 		
-		<p>Weight (lbs): {user.weight}</p>
 		
-		<p>Height (inches): {user.height}</p>
-		
-		<p>Body Mass Index (BMI): {user.bmi}</p>
-		
-		<p>Weight goal (lbs): {user.weight_goal}</p>
-		
-		<p>Weekly Target (lbs lost): {user.weekly_target}</p>
-		
-		<p>Calorie Allotment: {user.calorie_allot}</p>
-	</div>
-	}
+			
+	} 
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return ({
-    user: state.user
-  })
-} 
+	const foundUser = state.users.find((user) => {return user.id === +ownProps.match.params.id})
+	return {user: foundUser}
+}
 
-export default connect(mapStateToProps, {})(UserDisplay);
+
+export default connect(mapStateToProps)(UserDisplay);
