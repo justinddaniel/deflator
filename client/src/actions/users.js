@@ -62,6 +62,8 @@ export const createUser = (user, cb) => {
   }
 }
 
+//Note: when using a "PUT" request you must use body: JSON.stringify method. For "GET" requests you do NOT use body. 
+
 export const editUserLikes = (user) => {
   return dispatch => {
     return fetch(`/api/users/${user.id}`, {
