@@ -8,7 +8,7 @@ class UserDisplay extends Component {
 	render() {
 		const { user } = this.props //{user} is a destructuring pattern. 
 		return user ? //ternary allows it to render user only if user is a truthy object; avoids errors. 
-		 <div className="col-md-8">
+		 <div>
 			<h3>Username: {user.name}</h3>
 			<p>Weight: {user.weight}</p>
 			<p>Height: {user.height}</p>

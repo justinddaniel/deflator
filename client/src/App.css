@@ -25,6 +25,7 @@
 	height: 45vh;
 	margin: 0;
 	padding: 0;
+	overflow: scroll;
 }
 
 .info-entry {
@@ -42,8 +43,4 @@ ul {
   margin: 0;
   padding: 0;
   float: none;
-}
-
-.info-display {
-	overflow: scroll;
 }

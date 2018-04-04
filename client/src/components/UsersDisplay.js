@@ -26,9 +26,11 @@ render () {
 	})
 
   return (
-  	<div>
-  	  <ul>{users}</ul>
-      <div>
+  	<div className="row">
+      <div className="col-md-4 col-lg-6 col-sm-4">
+  	   <ul>{users}</ul>
+      </div>
+      <div className="col-md-8 col-lg-6 col-sm-8">
          <Route path="/api/users/:id" component={UserDisplay} /> 
       </div>
   	</div>
