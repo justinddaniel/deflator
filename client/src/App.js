@@ -33,9 +33,10 @@ class App extends Component {
             <Link to="/api/users/new"> Add user </Link>
         	</div>
         	<div className="info-display">
-        		<Route path="/api/users" component={UsersDisplay} />
-           
-        	</div>
+            <div className="container-fluid">
+        		  <Route path="/api/users" component={UsersDisplay} />
+        	  </div>
+          </div>
         	<div className="info-entry">
         		<Route path="/api/users/new" component={InfoEntry} />
             <Route path="/" component={Home} />

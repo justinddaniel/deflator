@@ -1,6 +1,6 @@
-.App {
+/*.App {
   text-align: center;
-}
+} */
 
 .navbar {
 	float: left;
@@ -17,15 +17,15 @@
 	text-decoration: none;
 }
 
-.info-display {
-	float: left;
+/*.info-display {
 	background-color: #6699ff;
 	color: black;
 	width: 100vw;
 	height: 45vh;
 	margin: 0;
 	padding: 0;
-}
+	overflow: scroll;
+} */
 
 .info-entry {
 	float: left;
@@ -44,6 +44,4 @@ ul {
   float: none;
 }
 
-.info-display {
-	overflow: scroll;
-}
+
