@@ -65,6 +65,7 @@ export const createUser = (user, cb) => {
 export const editUserLikes = (user) => {
   return dispatch => {
     return fetch(`/api/users/${user.id}`, {
+      method: "PUT",
       headers: {
         'Content-Type': 'application/json'
       },
