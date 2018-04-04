@@ -10,7 +10,6 @@ class UsersDisplay extends Component {
   userLikes(userId) {
     var user = this.props.users.find(function (user) { return user.id === userId; });
     var userCopy = Object.assign({}, user, {likes: user.likes + 1})
-    
     this.props.editUserLikes(userCopy)
   }
 
@@ -26,14 +25,10 @@ render () {
 	})
 
   return (
-    <div className="container-fluid">
-  	   <div className="row">
-          <div className="col-md-4">
-  	       <ul>{users}</ul>
-          </div>
-
+    <div>
+  	   <ul>{users}</ul>
+       <div>
          <Route path="/api/users/:id" component={UserDisplay} /> 
-
   	   </div>
     </div>
   	) 
