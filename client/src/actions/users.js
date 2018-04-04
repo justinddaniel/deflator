@@ -78,11 +78,3 @@ export const editUserLikes = (user) => {
   }
 }  
 
-/*export const getUser = (userId) => {
-    return dispatch => {
-      return fetch(`/api/users/${id}`, {headers})
-      .then(response => response.json())
-      .then(user => dispatch(dispUser(user)))
-      .catch(error => console.log(error));
-  }
-} */
