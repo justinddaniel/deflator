@@ -70,8 +70,8 @@ export const editUserLikes = (user) => {
       method: "PUT",
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ user: user })
+      },body: JSON.stringify({ user: user })
+      
     })
       .then(response => response.json())
       .then(user => {
