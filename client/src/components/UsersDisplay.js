@@ -27,12 +27,10 @@ render () {
 
   return (
   	<div className="row">
-      <div className="col-md-4 col-lg-6 col-sm-4">
+      <div className="col-md-4 col-lg-6 col-sm-4 col-xs-4">
   	   <ul>{users}</ul>
       </div>
-      <div className="col-md-8 col-lg-6 col-sm-8">
-         <Route path="/api/users/:id" component={UserDisplay} /> 
-      </div>
+      <Route path="/api/users/:id" component={UserDisplay} /> 
   	</div>
   	) 
   }
