@@ -38,7 +38,7 @@ class App extends Component {
         	</div>
         	<div className="info-entry">
         		<Route path="/api/users/new" component={InfoEntry} />
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
         	</div>
         </div>
       </Router>

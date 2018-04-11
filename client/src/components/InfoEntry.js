@@ -26,7 +26,7 @@ class InfoEntry extends Component {
     return (
       <div>Add a User
       <form onSubmit={this.handleOnSubmit}>
-        <label htmlFor="user_name"> Name </label>
+        <label htmlFor="user_name"> Name : </label>
         <input 
           type="text"
           name="name"
@@ -35,7 +35,7 @@ class InfoEntry extends Component {
           placeholder="User Name"
         /><br></br>
 
-        <label htmlFor="user_weight"> Weight </label>
+        <label htmlFor="user_weight"> Weight (in pounds) : </label>
         <input 
           type="number"
           name="weight"
@@ -43,7 +43,7 @@ class InfoEntry extends Component {
           onChange={this.handleOnChange}
         /><br></br>
 
-        <label htmlFor="user_height"> Height </label>
+        <label htmlFor="user_height"> Height (in inches) : </label>
         <input 
           type="number"
           name="height"
@@ -51,15 +51,17 @@ class InfoEntry extends Component {
           onChange={this.handleOnChange}
         /><br></br>
 
-        <label htmlFor="user_bmi"> BMI </label>
+        <label htmlFor="user_bmi"> Body Mass Index (BMI) : </label>
         <input 
           type="number"
           name="bmi"
           value={bmi} 
           onChange={this.handleOnChange}
-        /><br></br>
+        /><br></br><br></br>
 
-        <label htmlFor="user_weight_goal"> Weight Goal </label>
+        <span>Click here for help with BMI calculations and goal setting</span><br></br><br></br>
+
+        <label htmlFor="user_weight_goal"> Weight Goal (pounds) : </label>
         <input 
           type="number"
           name="weight_goal"
@@ -67,7 +69,7 @@ class InfoEntry extends Component {
           onChange={this.handleOnChange}
         /><br></br>
 
-        <label htmlFor="user_weekly_target"> Weekly Target </label>
+        <label htmlFor="user_weekly_target"> Weekly Target (pounds lost/week) : </label>
         <input 
           type="number"
           name="weekly_target"
@@ -75,7 +77,7 @@ class InfoEntry extends Component {
           onChange={this.handleOnChange}
         /><br></br>
 
-        <label htmlFor="user_calorie_allot"> Calorie Allotment </label>
+        <label htmlFor="user_calorie_allot"> Calorie Allotment (per day) : </label>
         <input 
           type="number"
           name="calorie_allot"
