@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import InfoDisplay from './components/InfoDisplay';
 import InfoEntry from './components/InfoEntry';
+import BMIDisplay from './components/BMIDisplay';
 import UsersDisplay from './components/UsersDisplay';
 import UserDisplay from './components/UserDisplay';
 import Home from './components/Home';
@@ -38,6 +39,7 @@ class App extends Component {
         	</div>
         	<div className="info-entry">
         		<Route path="/api/users/new" component={InfoEntry} />
+            <Route path="/bmihelp" component={BMIDisplay} />
             <Route exact path="/" component={Home} />
         	</div>
         </div>

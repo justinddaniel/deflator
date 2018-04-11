@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {updateUserFormData} from '../actions/userForm.js';
 import {createUser} from '../actions/users.js';
+import { Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class InfoEntry extends Component {
 
@@ -59,7 +61,7 @@ class InfoEntry extends Component {
           onChange={this.handleOnChange}
         /><br></br><br></br>
 
-        <span>Click here for help with BMI calculations and goal setting</span><br></br><br></br>
+        <span><Link to={"/bmihelp"}>Click here for help with BMI calculations and goal setting</Link></span><br></br><br></br>
 
         <label htmlFor="user_weight_goal"> Weight Goal (pounds) : </label>
         <input 
