@@ -3,18 +3,18 @@ import React, { Component } from 'react';
 class BMIDisplay extends Component {
 	
 	calculateBodyMassIndex = event => {
-    event.preventDefault();
-    var weight = +event.target.weight.value
-    var height = +event.target.height.value
-    if (typeof weight === 'number' && typeof height === 'number') {
-    	var BMI = (weight / (height * height)) * 703;
-    	var BMIrounded = Math.round(BMI*10)/10;
-    	document.getElementById('calculatedBMI').innerHTML = `Calculated BMI: ${BMIrounded}`
-    }
-    else {
-    	document.getElementById('calculatedBMI').innerHTML = "Invalid entry. Enter only numbers for weight and height."
-    }
-  }
+	    event.preventDefault();
+	    var weight = +event.target.weight.value
+	    var height = +event.target.height.value
+	    if (typeof weight === 'number' && typeof height === 'number') {
+	    	var BMI = (weight / (height * height)) * 703;
+	    	var BMIrounded = Math.round(BMI*10)/10;
+	    	document.getElementById('calculatedBMI').innerHTML = `Calculated BMI: ${BMIrounded}`
+	    }
+	    else {
+	    	document.getElementById('calculatedBMI').innerHTML = "Invalid entry. Enter only numbers for weight and height."
+	    }
+	  }
 
   render() {
 
