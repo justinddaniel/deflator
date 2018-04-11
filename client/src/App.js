@@ -3,6 +3,7 @@ import './App.css';
 import InfoDisplay from './components/InfoDisplay';
 import InfoEntry from './components/InfoEntry';
 import BMIDisplay from './components/BMIDisplay';
+import GoalHelp from './components/GoalHelp';
 import UsersDisplay from './components/UsersDisplay';
 import UserDisplay from './components/UserDisplay';
 import Home from './components/Home';
@@ -40,6 +41,7 @@ class App extends Component {
         	<div className="info-entry">
         		<Route path="/api/users/new" component={InfoEntry} />
             <Route path="/bmihelp" component={BMIDisplay} />
+            <Route path="/goalhelp" component={GoalHelp} />
             <Route exact path="/" component={Home} />
         	</div>
         </div>

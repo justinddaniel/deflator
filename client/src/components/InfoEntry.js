@@ -61,7 +61,9 @@ class InfoEntry extends Component {
           onChange={this.handleOnChange}
         /><br></br><br></br>
 
-        <span><Link to={"/bmihelp"}>Click here for help with BMI calculations and goal setting</Link></span><br></br><br></br>
+        <span><Link to={"/bmihelp"}>Click here for help with BMI calculations</Link></span><br></br><br></br>
+
+        <span><Link to={"/goalhelp"}>Click here for help with your goals</Link></span><br></br><br></br>
 
         <label htmlFor="user_weight_goal"> Weight Goal (pounds) : </label>
         <input 
