@@ -4,6 +4,7 @@ class GoalHelp extends Component {
 	
 	calculateGoals = event => {
 	    event.preventDefault();
+	    debugger;
 	    var weight = +event.target.weight.value
 	    var height = +event.target.height.value
 	    var activity = +event.target.activitylevel.value
@@ -19,7 +20,29 @@ class GoalHelp extends Component {
 	    else if (BMI <= 25 && BMI >= 19 ) {
 	    	suggestedBMI = BMI;
 	    }
-	    suggestedWeight = Math.round(suggestedBMI * height * height / 703);
+	    var suggestedWeight = Math.round(suggestedBMI * height * height / 703);
+
+	    let suggestedWeeklyTarget;
+
+	    var weightLoss = weight - suggestedWeight
+
+	    if (weightLoss > 20) {
+	    	suggestedWeeklyTarget = "lose 0.5 pounds";
+	    }
+	    else if (weightLoss <= 20 && weightLoss > 0) {
+	    	suggestedWeeklyTarget = "lose 1 pound";
+	    }
+
+	    else if (weightLoss < 0) {
+	    	suggestedWeeklyTarget = "gain 0.5 pounds";
+	    }
+	    else {
+	    	suggestedWeeklyTarget = "invalid entries. Make sure you entered numbers for all entries, and 0, 1, 2, or 3 for activity.";
+	    }
+	    if (typeof suggestedBMI === 'number' && activity >= 0 && activity <= 3) {
+	    	let suggestedCalories;
+
+	    }
 	  }
 
   render() {
