@@ -31,15 +31,17 @@ class App extends Component {
         	<div className="navbar">
           <span>Deflator Navigation Bar: </span>
         		<Link to="/"> Home </Link>
-            <Link to="/api/users"> Users </Link>
-            <Link to="/api/users/new"> Add user </Link>
+            <Link to="/users"> Users </Link>
+            <Link to="/users/new"> Add user </Link>
+            <Link to="/bmihelp"> Your BMI </Link>
+            <Link to="/goalhelp"> Help with Goals </Link>
         	</div>
         	<div className="info-display container-fluid">
-        		<Route path="/api/users" component={UsersDisplay} />
+        		<Route path="/users" component={UsersDisplay} />
            
         	</div>
         	<div className="info-entry">
-        		<Route path="/api/users/new" component={InfoEntry} />
+        		<Route path="/users/new" component={InfoEntry} />
             <Route path="/bmihelp" component={BMIDisplay} />
             <Route path="/goalhelp" component={GoalHelp} />
             <Route exact path="/" component={Home} />

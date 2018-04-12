@@ -10,12 +10,12 @@ class UserDisplay extends Component {
 		return user ? //ternary allows it to render user only if user is a truthy object; avoids errors. 
 		 <div className="col-md-8 col-lg-6 col-sm-8 col-xs-8">
 			<h3>Username: {user.name}</h3>
-			<p>Weight: {user.weight}</p>
-			<p>Height: {user.height}</p>
+			<p>Weight: {user.weight} pounds</p>
+			<p>Height: {user.height} inches</p>
 			<p>Body Mass Index (BMI): {user.bmi}</p>
-			<p>Weight Goal (lbs): {user.weight_goal}</p>
-			<p>Weekly Target (lbs): {user.weekly_target}</p>
-			<p>Daily Calorie Allotment: {user.calorie_allot}</p>
+			<p>Weight Goal: {user.weight_goal} pounds</p>
+			<p>Weekly Target: {user.weekly_target} pounds per week</p>
+			<p>Daily Calorie Allotment: {user.calorie_allot} Calories</p>
 		 </div> : null
 		
 		

@@ -15,13 +15,13 @@ class UsersDisplay extends Component {
   }
 
 render () {
-
+  const length = this.props.users.length
 	const users = this.props.users.map((user) => {
 
     return <div>
-      <li key={user.id}>Username: <Link key={user.id + 11} to={`/api/users/${user.id}`}>{user.name}</Link>, Likes: <span id={user.id}>{user.likes}</span> </li>
+      <li key={user.id}>Username: <Link key={user.id + length} to={`/users/${user.id}`}>{user.name}</Link>, Likes: <span id={user.id}>{user.likes}</span> </li>
       
-      <button type="button" id={user.id + 11} onClick={(e) => this.userLikes(user.id)}>Like user</button>
+      <button type="button" id={user.id + length} onClick={(e) => this.userLikes(user.id)}>Like user</button>
     
     </div>
 	} )
@@ -31,7 +31,7 @@ render () {
       <div className="col-md-4 col-lg-6 col-sm-4 col-xs-4">  
   	   <ul>{users}</ul>
       </div>
-      <Route path="/api/users/:id" component={UserDisplay} /> 
+      <Route path="/users/:id" component={UserDisplay} /> 
   	</div>
   	) 
   }
