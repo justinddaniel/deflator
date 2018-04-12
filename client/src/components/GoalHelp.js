@@ -4,12 +4,15 @@ class GoalHelp extends Component {
 	
 	calculateGoals = event => {
 	    event.preventDefault();
-	    debugger;
 	    var weight = +event.target.weight.value
 	    var height = +event.target.height.value
 	    var activity = +event.target.activitylevel.value
+	    var age = +event.target.age.value
+	    var sex = event.target.sex.value
 	    var BMI = (weight / (height * height)) * 703;
 	    let suggestedBMI;
+	    let suggestedCalories;
+	    var errorResponse = false;
 	    if (BMI > 25) {
 	    	suggestedBMI = 25;
 	    }
@@ -27,21 +30,39 @@ class GoalHelp extends Component {
 	    var weightLoss = weight - suggestedWeight
 
 	    if (weightLoss > 20) {
-	    	suggestedWeeklyTarget = "lose 0.5 pounds";
+	    	suggestedWeeklyTarget = 0.5;
 	    }
 	    else if (weightLoss <= 20 && weightLoss > 0) {
-	    	suggestedWeeklyTarget = "lose 1 pound";
+	    	suggestedWeeklyTarget = 1;
 	    }
 
 	    else if (weightLoss < 0) {
-	    	suggestedWeeklyTarget = "gain 0.5 pounds";
+	    	suggestedWeeklyTarget = -0.5;
+	    }
+
+	    let suggestedLossOrGain;
+	    
+	    suggestedWeeklyTarget > 0 ? suggestedLossOrGain = `We suggest you lose ${suggestedWeeklyTarget} pounds per week` : suggestedLossOrGain = `We suggest you gain ${suggestedWeeklyTarget+1} pounds per week`
+
+	    if (typeof suggestedBMI === 'number' && activity >= 0 && activity <= 3 && (sex === 'male' || sex === 'female') && typeof age === 'number') {
+	    	
+	    	if (sex === 'male') {
+	    		suggestedCalories = Math.round(4.535 * weight + 15.86 * height - 5*age + 300*activity + 205) - Math.round(3500*suggestedWeeklyTarget / 7)
+	    	}
+	    	else {
+	    		suggestedCalories = Math.round(4.535 * weight + 15.86 * height - 5*age + 300*activity + 39) - Math.round(3500*suggestedWeeklyTarget / 7)
+	    	}
 	    }
 	    else {
-	    	suggestedWeeklyTarget = "invalid entries. Make sure you entered numbers for all entries, and 0, 1, 2, or 3 for activity.";
+	    	errorResponse = true;
 	    }
-	    if (typeof suggestedBMI === 'number' && activity >= 0 && activity <= 3) {
-	    	let suggestedCalories;
-
+	    if (errorResponse) {
+	    	document.getElementById('calculatedweightgoal').innerHTML = "Invalid enties. Make sure you have entered numbers for all boxes and selected either male or female. Activity Level must be a number 0, 1, 2, or 3."
+	    }
+	    else {
+	    	document.getElementById('calculatedweightgoal').innerHTML = `We suggest a weight goal of ${suggestedWeight} pounds`
+	    	document.getElementById('weeklytargetsuggest').innerHTML = suggestedLossOrGain
+	    	document.getElementById('calorietargetsuggest').innerHTML = `A diet of ${suggestedCalories} calories per day will help you meet these goals.`	
 	    }
 	  }
 
@@ -76,6 +97,17 @@ class GoalHelp extends Component {
 				name="height"
 				placeholder="height"
 			/><br></br>
+
+			<label htmlFor="age"> Your Age (years): </label>
+			<input
+				type="number"
+				name="age"
+				placeholder="age"
+			/><br></br>
+
+			<label htmlFor="sex"> Your Biological Sex: </label>
+			<input type="radio" name="sex" value="male"/>Male
+			<input type="radio" name="sex" value="female"/>Female<br></br>
 
 			<label htmlFor="activitylevel"> Your Activity Level (0-3): </label>
 			<input
