@@ -40,16 +40,30 @@ class GoalHelp extends Component {
 	    	suggestedWeeklyTarget = -0.5;
 	    }
 
+	    else if (weightLoss === 0) {
+	    	suggestedWeeklyTarget = 0;
+	    }
+
 	    let suggestedLossOrGain;
 	    
-	    suggestedWeeklyTarget > 0 ? suggestedLossOrGain = `We suggest you lose ${suggestedWeeklyTarget} pounds per week` : suggestedLossOrGain = `We suggest you gain ${suggestedWeeklyTarget+1} pounds per week`
+	    if (suggestedWeeklyTarget > 0) {
+	    	suggestedLossOrGain = `We suggest you lose ${suggestedWeeklyTarget} pounds per week.`
+	    }
+
+	    else if (suggestedWeeklyTarget < 0) {
+	    	suggestedLossOrGain = `We suggest you gain 0.5 pounds per week.`
+	    }
+
+	    else if (suggestedWeeklyTarget === 0)  {
+	    	suggestedLossOrGain = `We suggest you maintain your current weight`
+	    }
 
 	    if (typeof suggestedBMI === 'number' && activity >= 0 && activity <= 3 && (sex === 'male' || sex === 'female') && typeof age === 'number') {
 	    	
 	    	if (sex === 'male') {
 	    		suggestedCalories = Math.round(4.535 * weight + 15.86 * height - 5*age + 300*activity + 205) - Math.round(3500*suggestedWeeklyTarget / 7)
 	    	}
-	    	else {
+	    	else if (sex === 'female') {
 	    		suggestedCalories = Math.round(4.535 * weight + 15.86 * height - 5*age + 300*activity + 39) - Math.round(3500*suggestedWeeklyTarget / 7)
 	    	}
 	    }
