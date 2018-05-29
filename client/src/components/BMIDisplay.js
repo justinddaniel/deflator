@@ -9,7 +9,12 @@ class BMIDisplay extends Component {
 	    if (typeof weight === 'number' && typeof height === 'number') {
 	    	var BMI = (weight / (height * height)) * 703;
 	    	var BMIrounded = Math.round(BMI*10)/10;
-	    	document.getElementById('calculatedBMI').innerHTML = `Calculated BMI: ${BMIrounded}`
+	    	let BMIassessment;
+	    	if (BMIrounded >= 30) {BMIassessment = 'Obese'}
+	    	else if (BMIrounded >= 25 && BMIrounded < 30) {BMIassessment = 'Overweight'}
+	    	else if (BMIrounded >= 18.5 && BMIrounded < 25) {BMIassessment = 'Normal Weight'}
+	    	else if (BMIrounded < 18.5) {BMIassessment = 'Underweight'}
+	    	document.getElementById('calculatedBMI').innerHTML = `Calculated BMI: ${BMIrounded}, ${BMIassessment}`
 	    }
 	    else {
 	    	document.getElementById('calculatedBMI').innerHTML = "Invalid entry. Enter only numbers for weight and height."
